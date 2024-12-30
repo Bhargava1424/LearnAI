@@ -1,0 +1,27 @@
+# Google Cloud AI Platform SDK for using Vertex AI models
+google-cloud-aiplatform
+
+# Google Cloud Text-to-Speech API
+google-cloud-texttospeech
+
+# Vertex AI SDK for accessing specific models
+vertexai
+
+# LangChain for working with document loaders, retrievers, and LLMs
+vertexai
+
+# Google Generative AI Embeddings for vector generation
+langchain_google_genai
+
+# PyPDFLoader for loading PDFs into LangChain
+langchain_community[texttospeech]
+
+langchain_google_community
+
+pydantic-settings
+
+moviepy==2.0.0.dev2
+
+google-cloud-vision
+
+streamlit

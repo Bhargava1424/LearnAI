@@ -1,0 +1,4 @@
+/langchain_env
+/.env
+/credentials.json
+/texttospeechCredentials.json
