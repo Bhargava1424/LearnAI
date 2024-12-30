@@ -29,23 +29,6 @@ Human: {input}
 AI Assistant:"""
 prompt = PromptTemplate(input_variables=["history", "input"], template=template)
 
-# Text-to-Speech Function
-def text_to_speech(text):
-    client = texttospeech.TextToSpeechClient()
-    synthesis_input = texttospeech.SynthesisInput(text=text)
-    voice = texttospeech.VoiceSelectionParams(
-        language_code="en-US", ssml_gender=texttospeech.SsmlVoiceGender.NEUTRAL
-    )
-    audio_config = texttospeech.AudioConfig(
-        audio_encoding=texttospeech.AudioEncoding.MP3
-    )
-    response = client.synthesize_speech(
-        input=synthesis_input, voice=voice, audio_config=audio_config
-    )
-    with open("output.mp3", "wb") as out:
-        out.write(response.audio_content)
-    print("Audio content saved as output.mp3")
-
 # Generate response using Gemini AI
 def generate_response(user_input, history):
     # Prepare history for the prompt
@@ -55,6 +38,7 @@ def generate_response(user_input, history):
     # Generate text response
     model = genai.GenerativeModel("gemini-1.5-flash")  # Replace with specific Gemini model if needed
     response = model.generate_content([input_text])
+    
 
     # Return AI response text
     return response.text
